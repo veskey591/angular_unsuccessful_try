@@ -1,15 +1,17 @@
 <table>
     <tr>
-        <th> type </th>
-        <th> number </th>
-        <th> expiration </th>
-        <th> owner </th>
-        <button (click)="removeString(1)">Удалить</button>
+        <th>id</th>
+        <th>Тип карты</th>
+        <th>Номер карты</th>
+        <th>Истечение</th>
+        <th>Владелец карты</th>
     </tr>
-    <tr>
-        <th>{{obj.type}}</th>
-        <th>{{obj.number}}</th>
-        <th>{{obj.expiration}}</th>
-        <th>{{obj.owner}}</th>
+    <tr *ngFor="let card of Cards">
+        <td>{{card.id}}</td>
+        <td>{{card.type}}</td>
+        <td>{{card.number}}</td>
+        <td>{{card.expiration}}</td>
+        <td>{{card.owner}}</td>
+        <button (click)="deleteCard(Cards)"> удалить </button>
     </tr>
 </table>
